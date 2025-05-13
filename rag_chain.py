@@ -31,7 +31,7 @@ template = PromptTemplate(
 
 def extract_sql_query(response):
     """Extract SQL query from LLM response"""
-    match = re.search(r'(SELECT|INSERT|UPDATE|DELETE).*?;', response, re.DOTALL)
+    match = re.search(r'(SELECT|INSERT).*?;', response, re.DOTALL)
     return match.group(0) if match else None
 
 def get_table_columns(table_name):
